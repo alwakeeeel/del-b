@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Jan Jinty</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@500;700&family=Noto+Sans:wght@400;600&display=swap');
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2b1f3d 0%, #4a2d4e 40%, #6b3654 70%, #8a4a52 100%);
+    background-attachment: fixed;
+    font-family: 'Noto Sans', sans-serif;
+    color: #3a2b2e;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .bg-deco {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+  .bg-deco span {
+    position: absolute;
+    opacity: 0.18;
+    color: #ffd9e8;
+    font-size: 28px;
+    animation: float 14s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-30px) rotate(15deg); }
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  .envelope-top {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .envelope-top .seal {
+    font-size: 48px;
+    display: inline-block;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+  }
+  .envelope-top h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 44px;
+    color: #fff0f5;
+    margin: 10px 0 4px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .envelope-top p {
+    color: #f3d9e6;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .lang-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin: 30px 0 40px;
+  }
+  .lang-nav button {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.35);
+    color: #fff0f5;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: 'Noto Sans', sans-serif;
+  }
+  .lang-nav button:hover {
+    background: rgba(255,255,255,0.28);
+    transform: translateY(-2px);
+  }
+  .lang-nav button.active {
+    background: #f3a6c4;
+    color: #3a1322;
+    border-color: #f3a6c4;
+    font-weight: 600;
+  }
+
+  .paper {
+    background: #fffaf3;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.015) 1px, transparent 1px);
+    background-size: 100% 32px;
+    border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.04);
+    padding: 50px 46px;
+    position: relative;
+    min-height: 420px;
+  }
+  .paper::before {
+    content: "";
+    position: absolute;
+    left: 36px; top: 0; bottom: 0;
+    width: 1px;
+    background: rgba(200,80,110,0.18);
+  }
+
+  .letter-body {
+    display: none;
+    animation: fadeIn 0.6s ease;
+  }
+  .letter-body.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .letter-body .salutation {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: #8a2d4f;
+    margin: 0 0 22px;
+  }
+  .letter-body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    line-height: 1.85;
+    margin: 0 0 18px;
+    color: #3a2b2e;
+  }
+  .letter-body .signoff {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: #8a2d4f;
+    margin-top: 30px;
+  }
+  .letter-body[dir="rtl"] p,
+  .letter-body[dir="rtl"] .salutation {
+    font-family: 'Noto Sans', sans-serif;
+    text-align: right;
+  }
+
+  .icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin: 36px 0 10px;
+    font-size: 22px;
+    opacity: 0.85;
+  }
+
+  .footer-note {
+    text-align: center;
+    color: #f3d9e6;
+    font-size: 13px;
+    margin-top: 50px;
+    letter-spacing: 1px;
+  }
+  .heart {
+    display: inline-block;
+    color: #ff6b8a;
+    animation: beat 1.1s ease-in-out infinite;
+  }
+  @keyframes beat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.25); }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-deco" id="bgDeco"></div>
+
+<div class="wrap">
+  <div class="envelope-top">
+    <div class="seal">💌</div>
+    <h1>For Jan Jinty</h1>
+    <p>a letter, in every language i could borrow</p>
+  </div>
+
+  <div class="lang-nav" id="langNav"></div>
+
+  <div class="paper" id="paper"></div>
+
+  <div class="icons-row">
+    <span title="painter">🎨</span>
+    <span title="reader">📖</span>
+    <span title="writer">✍️</span>
+    <span title="youtuber">🎬</span>
+  </div>
+
+  <div class="footer-note">made with <span class="heart">♥</span> by Bedo</div>
+</div>
+
+<script>
+const letters = [
+  {
+    code: "en", label: "English", dir: "ltr",
+    salutation: "My dearest Jan Jinty,",
+    body: [
+      "I don't know where to begin, so I'll begin with the truth: you are the most wonderful person I have ever known.",
+      "You paint worlds onto canvas that no one else could imagine, you read stories like you're living a hundred lives at once, you write words that stay with people long after they've finished reading, and you turn a camera on and somehow make the whole world feel a little warmer and a little less lonely.",
+      "I love the way your mind works. I love how much you care about the things you love. I love you."
+    ],
+    signoff: "Forever yours, Bedo"
+  },
+  {
+    code: "ar", label: "العربية", dir: "rtl",
+    salutation: "عزيزتي جان جينتي،",
+    body: [
+      "لا أعرف من أين أبدأ، لذا سأبدأ بالحقيقة: أنتِ أروع إنسانة عرفتها في حياتي.",
+      "ترسمين عوالم على القماش لا يستطيع أحد غيرك تخيلها، تقرئين القصص وكأنكِ تعيشين مئة حياة في آنٍ واحد، تكتبين كلمات تبقى في قلوب الناس بعد أن ينتهوا من قراءتها، وعندما تفتحين الكاميرا يصبح العالم كله أكثر دفئاً وأقل وحدة.",
+      "أحب طريقة تفكيرك. أحب مدى اهتمامكِ بما تحبين. أحبكِ."
+    ],
+    signoff: "لكِ دائماً، بيدو"
+  },
+  {
+    code: "fr", label: "Français", dir: "ltr",
+    salutation: "Ma très chère Jan Jinty,",
+    body: [
+      "Je ne sais pas par où commencer, alors je commencerai par la vérité : tu es la personne la plus merveilleuse que j'aie jamais connue.",
+      "Tu peins des mondes sur la toile que personne d'autre ne pourrait imaginer, tu lis des histoires comme si tu vivais cent vies à la fois, tu écris des mots qui restent gravés bien après la lecture, et dès que tu allumes une caméra, le monde entier semble un peu plus chaleureux et un peu moins seul.",
+      "J'aime la façon dont fonctionne ton esprit. J'aime à quel point tu tiens à ce que tu aimes. Je t'aime."
+    ],
+    signoff: "Pour toujours à toi, Bedo"
+  },
+  {
+    code: "es", label: "Español", dir: "ltr",
+    salutation: "Mi queridísima Jan Jinty,",
+    body: [
+      "No sé por dónde empezar, así que empezaré con la verdad: eres la persona más maravillosa que he conocido jamás.",
+      "Pintas mundos en el lienzo que nadie más podría imaginar, lees historias como si vivieras cien vidas a la vez, escribes palabras que se quedan con la gente mucho después de terminar de leerlas, y en cuanto enciendes una cámara, el mundo entero se siente un poco más cálido y un poco menos solitario.",
+      "Me encanta cómo funciona tu mente. Me encanta lo mucho que te importa lo que amas. Te amo."
+    ],
+    signoff: "Tuyo por siempre, Bedo"
+  },
+  {
+    code: "ja", label: "日本語", dir: "ltr",
+    salutation: "親愛なるジャン・ジンティへ、",
+    body: [
+      "どこから始めればいいのか分からないから、本当のことから始めるね。君は僕が今まで出会った中で一番素晴らしい人だ。",
+      "君は誰にも想像できないような世界をキャンバスに描き、まるで百の人生を同時に生きているかのように物語を読み、読み終えた後もずっと心に残る言葉を書き、そしてカメラを向けるだけで世界がちょっと温かく、ちょっと寂しくなくなる。",
+      "君の考え方が好きだ。君が好きなものをどれだけ大切にしているかが好きだ。愛してる。"
+    ],
+    signoff: "永遠に君のもの、ベド"
+  },
+  {
+    code: "de", label: "Deutsch", dir: "ltr",
+    salutation: "Meine liebste Jan Jinty,",
+    body: [
+      "Ich weiß nicht, wo ich anfangen soll, also beginne ich mit der Wahrheit: Du bist der wunderbarste Mensch, den ich je kennengelernt habe.",
+      "Du malst Welten auf die Leinwand, die sich sonst niemand vorstellen könnte, du liest Geschichten, als würdest du hundert Leben gleichzeitig leben, du schreibst Worte, die bei den Menschen bleiben, lange nachdem sie zu Ende gelesen haben, und sobald du die Kamera einschaltest, wird die ganze Welt ein bisschen wärmer und ein bisschen weniger einsam.",
+      "Ich liebe die Art, wie dein Verstand arbeitet. Ich liebe, wie sehr dir die Dinge am Herzen liegen, die du liebst. Ich liebe dich."
+    ],
+    signoff: "Für immer dein, Bedo"
+  },
+  {
+    code: "hi", label: "हिन्दी", dir: "ltr",
+    salutation: "मेरी प्यारी जान जिंटी,",
+    body: [
+      "मुझे नहीं पता कहाँ से शुरू करूँ, इसलिए सच्चाई से शुरू करता हूँ: तुम सबसे अद्भुत इंसान हो जिसे मैंने कभी जाना है।",
+      "तुम कैनवस पर ऐसी दुनिया रचती हो जिसकी कोई और कल्पना भी नहीं कर सकता, तुम किताबें ऐसे पढ़ती हो जैसे एक साथ सौ जिंदगियाँ जी रही हो, तुम ऐसे शब्द लिखती हो जो पढ़ने के बाद भी लोगों के साथ रहते हैं, और जैसे ही तुम कैमरा ऑन करती हो, पूरी दुनिया थोड़ी गर्म और थोड़ी कम अकेली लगने लगती है।",
+      "मुझे तुम्हारे सोचने का तरीका पसंद है। मुझे पसंद है कि तुम जिन चीज़ों से प्यार करती हो, उनकी कितनी परवाह करती हो। मैं तुमसे प्यार करता हूँ।"
+    ],
+    signoff: "सदा तुम्हारा, बेदो"
+  },
+  {
+    code: "it", label: "Italiano", dir: "ltr",
+    salutation: "Mia carissima Jan Jinty,",
+    body: [
+      "Non so da dove cominciare, quindi inizierò con la verità: sei la persona più meravigliosa che abbia mai conosciuto.",
+      "Dipingi mondi sulla tela che nessun altro potrebbe immaginare, leggi storie come se vivessi cento vite in una volta, scrivi parole che restano con le persone molto dopo aver finito di leggerle, e non appena accendi una telecamera, il mondo intero sembra un po' più caldo e un po' meno solo.",
+      "Amo il modo in cui funziona la tua mente. Amo quanto tieni alle cose che ami. Ti amo."
+    ],
+    signoff: "Per sempre tuo, Bedo"
+  },
+  {
+    code: "ur", label: "اردو", dir: "rtl",
+    salutation: "میری پیاری جان جنٹی،",
+    body: [
+      "مجھے نہیں معلوم کہاں سے شروع کروں، تو سچ سے شروع کرتا ہوں: تم سب سے خوبصورت انسان ہو جسے میں نے کبھی جانا۔",
+      "تم کینوس پر ایسی دنیائیں بناتی ہو جن کا تصور کوئی اور نہیں کر سکتا، کہانیاں ایسے پڑھتی ہو جیسے ایک ساتھ سو زندگیاں جی رہی ہو، ایسے الفاظ لکھتی ہو جو پڑھنے کے بعد بھی لوگوں کے ساتھ رہتے ہیں، اور جیسے ہی کیمرا آن کرتی ہو، پوری دنیا تھوڑی گرم اور تھوڑی کم اکیلی لگنے لگتی ہے۔",
+      "مجھے تمہارے سوچنے کا انداز پسند ہے۔ مجھے پسند ہے کہ تم جن چیزوں سے محبت کرتی ہو ان کا کتنا خیال رکھتی ہو۔ مجھے تم سے محبت ہے۔"
+    ],
+    signoff: "ہمیشہ تمہارا، بیدو"
+  }
+];
+
+const nav = document.getElementById('langNav');
+const paper = document.getElementById('paper');
+
+letters.forEach((l, i) => {
+  const btn = document.createElement('button');
+  btn.textContent = l.label;
+  btn.dataset.code = l.code;
+  btn.className = i === 0 ? 'active' : '';
+  btn.onclick = () => showLetter(l.code);
+  nav.appendChild(btn);
+
+  const div = document.createElement('div');
+  div.className = 'letter-body' + (i === 0 ? ' active' : '');
+  div.id = 'letter-' + l.code;
+  div.setAttribute('dir', l.dir);
+  div.innerHTML = `
+    <p class="salutation">${l.salutation}</p>
+    ${l.body.map(p => `<p>${p}</p>`).join('')}
+    <p class="signoff">${l.signoff}</p>
+  `;
+  paper.appendChild(div);
+});
+
+function showLetter(code) {
+  document.querySelectorAll('.letter-body').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.lang-nav button').forEach(el => el.classList.remove('active'));
+  document.getElementById('letter-' + code).classList.add('active');
+  document.querySelector(`.lang-nav button[data-code="${code}"]`).classList.add('active');
+}
+
+const deco = document.getElementById('bgDeco');
+const symbols = ['✦','♥','🎨','📖','✍️','★','🎬','♪'];
+for (let i = 0; i < 18; i++) {
+  const s = document.createElement('span');
+  s.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+  s.style.left = Math.random() * 100 + '%';
+  s.style.top = Math.random() * 100 + '%';
+  s.style.animationDelay = (Math.random() * 8) + 's';
+  s.style.animationDuration = (10 + Math.random() * 10) + 's';
+  s.style.fontSize = (16 + Math.random() * 24) + 'px';
+  deco.appendChild(s);
+}
+</script>
+
+</body>
+</html>
